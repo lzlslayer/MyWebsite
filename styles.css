@@ -1,0 +1,140 @@
+/* Main Styles */
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0px;
+}
+
+.container {                        
+    display: grid;                  /*Allows for alignment of elements - similar to flexbox but better for large displays*/
+    grid-template-columns: 1fr;
+}
+
+/* Nav Styles */
+.nav-wrapper {
+    display: flex;                  /*Allows for alignment of elements on a page, typically for smaller elements like nav bar etc.*/
+    justify-content: space-between;
+    padding: 38px;
+}
+
+.left-side {
+    display: flex;                  /*Allows for alignment of elements on a page, typically for smaller elements like nav bar etc.*/
+}
+
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+}
+
+.nav-link-wrapper {
+    height: 19px;
+    border-bottom: 1.75px solid transparent;
+}
+
+.nav-link-wrapper a {
+    color: #c65d84;
+    text-decoration: none;
+    transition: color .5s;  /*TEST 0.3s before*/
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1.75px solid #d61a3f;
+}
+
+.nav-link-wrapper a:hover {
+    color: #d61a3f;
+    font-weight: 600;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid #d61a3f;
+}
+
+.active-nav-link a {
+   color: #d61a3f !important;       /*important overrides typical color behaviour*/
+}
+
+
+/* Portfolio Styles */
+
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Sets 3 columns with each having own full-sized column*/
+}
+
+.portfolio-item-wrapper {
+    position: relative; /*Allows flexibility with positioning of each item*/
+}
+
+.portfolio-img-background {
+    height: 350px;
+    width: 100%;
+    background-size: cover; /*When background images have dif. sizes, this ensures theyll all crop to the same size */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*This img-text-wrapper is going to be positioned at very top, then inside all elements will used flex box */
+.img-text-wrapper {
+    position: absolute; /*Forcing element to be somehwere it usually wouldn't go*/
+    top: 0; /*position at very top*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /*left-roght alignment*/
+    align-items: center;    /*top-bottom alignment*/
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    color: transparent; /*Starting color is transparent*/
+    font-weight: 600; /*Also transitions in font weight, else it will jump at end of transition*/
+}
+
+/*Needs to be more specific with selector (change with hover). Therefore below notation does this: says that this will be applied to the img-text-wrapper only in a "hover" */
+.img-text-wrapper:hover .subtitle {
+    font-weight: 600;
+    color: red;
+}
+
+/*Animation to darken selected image: Needs javascript to dynamically add/remove this class depending on hover status*/
+.img-darken {
+    transition: 1s;
+    filter: brightness(10%);
+}
+
+
+/*About Page Styles*/
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img {
+    width: 100%;
+}
+
+.profile-content-wrappr {
+    padding: 30px
+}
+
+.profile-content-wrapper h1 {
+    color: #d61a3f;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.profile-content-wrapper p {
+    color: #000000;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    
+}
+
+
+/*My Projects Page Styles*/
+
